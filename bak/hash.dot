@@ -1,0 +1,102 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		gradientangle=90
+		];
+	edge[
+		];
+
+	"HTAB"[
+		label = "struct HTAB
+		|<f0>HASHHDR *hctl 控制共享信息等，如果是共享的就放在共享内存
+		|<f1>HASHSEGMENT *dir 段指针
+		|HashValueFunc hash 哈希函数
+		|HashCompareFunc match 键值比较函数
+		|HashCopyFunc keycopy 键值复制函数
+		|HashAllocFunc alloc 内存分配器
+		|MemoryContext hcxt 内存上下文（默认分配器使用状态下）
+		| char *tabname 表名（用于错误消息）
+		|bool isshared 表在共享内存时为真
+		|bool frozen 被冻结的表无法插入
+		|Size keysize 哈希键值长度
+		| long ssize 段保存bucket个数
+		|int sshift （log2(ssize)）"
+		fillcolor = "lightblue"
+		]
+
+
+	"HASHSEGMENT"[
+		label = "<f0>HASHSEGMENT|<f1>HASHSEGMENT|...|HASHSEGMENT"
+		fillcolor = "white"
+		]
+	"HASHELEMENT"[
+		label = "<f0>struct HASHELEMENT
+		|<f1>struct HASHELEMENT *link
+		|uint32 hashvalue
+		|caller's data"
+		fillcolor = "lightgreen"
+		]
+
+	"1HASHELEMENT"[
+		label = "<f0>struct HASHELEMENT
+		|<f1>struct HASHELEMENT *link
+		|uint32 hashvalue
+		|caller's data"
+		fillcolor = "lightgreen"
+		]
+	"2HASHELEMENT"[
+		label = "<f0>struct HASHELEMENT
+		|<f1>struct HASHELEMENT *link
+		|uint32 hashvalue
+		|caller's data"
+		fillcolor = "lightgreen"
+		]
+	"3HASHELEMENT"[
+		label = "<f0>struct HASHELEMENT
+		|<f1>struct HASHELEMENT *link
+		|uint32 hashvalue
+		|caller's data"
+		fillcolor = "lightgreen"
+		]
+
+
+	"HASHBUCKET"[
+		label = "<f0>HASHBUCKET
+			|......
+			|HASHBUCKET"
+		fillcolor = "lightyellow"
+		]
+	
+	"1HASHBUCKET"[
+		label = "<f0>HASHBUCKET
+			|......
+			|HASHBUCKET"
+		fillcolor = "lightyellow"
+		]
+
+	
+
+
+//	"HTAB":f0 -> "HASHHDR":f0;
+	"HTAB":f1 -> "HASHSEGMENT":f0;
+	"HASHSEGMENT":f0 -> "HASHBUCKET":f0;
+	"HASHSEGMENT":f1 -> "1HASHBUCKET":f0;
+	"HASHBUCKET":f0 -> "HASHELEMENT":f0;
+	"HASHELEMENT":f1 -> "1HASHELEMENT":f0;
+	"1HASHBUCKET":f0 -> "2HASHELEMENT":f0;
+	"2HASHELEMENT":f1 -> "3HASHELEMENT":f0;
+
+//	"buftag"[
+//		label = "struct BufferTag|RelFileNode rnode|ForkNumber forkNum|BlockNumber blockNum"
+//		]
+}
+

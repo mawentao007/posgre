@@ -1,0 +1,39 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		gradientangle=90
+		
+		];
+	edge[
+		];
+
+
+	"HASHCTL"[
+		label = "HASHCTL  创建哈希表时候使用的结构体
+		|long num_partitions
+		|long ssize
+		|long dsize
+		|long max_dsize
+		|long ffactor
+		|Size keysize
+		|Size entrysize
+		|HashValueFunc hash
+		|HashCompareFunc  match
+		|HashCopyFunc  keycopy
+		|HashAllocFunc  alloc
+		|MemoryContext  hcxt
+		|HASHHDR *hctl header 在共享内存的位置"
+		fillcolor = "yellow"
+		]
+
+}
+

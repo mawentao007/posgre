@@ -1,0 +1,45 @@
+\transboxout 
+\frametitle{SysCache中的Hash}
+
+\begin{table}
+\scriptsize
+\caption{精确匹配基本流程及相关函数}
+\begin{tabular}{|c|c|}
+\hline
+初始化关键字信息 & \tabincell{c}{根据四个关键字初始化cur\_skey}\\
+\hline
+计算哈希值和索引 & \tabincell{c} {CatalogCacheComputeHashValue\\
+由关键字计算hashValue\\
+HASH\_INDEX宏利用hashValue\\
+和cc\_buckets计算索引}\\
+\hline
+在索引对应的桶中查找 & \tabincell{c}{HeapKeyTest检查key是否匹配\\
+    将匹配的元组移动到链表头}\\
+\hline
+
+\end{tabular}
+\end{table}
+%\end{frame}
+
+
+%\begin{frame}
+%\transboxout
+%\frametitle{SysCache中的Hash}
+\begin{table}
+\scriptsize
+\centering
+\caption{部分匹配基本流程及相关函数}
+\begin{tabular}{|c|c|}
+\hline
+初始化关键字信息 & \tabincell{c}{根据部分关键字初始化cur\_skey}\\
+\hline
+计算哈希值和索引 & \tabincell{c} {CatalogCacheComputeHashValue\\
+根据关键字个数计算lhashValue}\\
+\hline
+\tabincell{c}{在CatCache的cc\_lists\\指向的CatCList链表中查找}         & \tabincell{c}{HeapKey Test检查key是否匹配\\
+          将匹配的CatClist放到cc\_lists\\
+  链表的头部\\
+  不存在CatCList，扫描物理表并构建}\\
+\hline
+\end{tabular}
+\end{table}

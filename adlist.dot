@@ -1,0 +1,30 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white:lightblue"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		gradientangle=90
+		];
+	edge[
+		];
+
+	"list"[
+		label = "<f0>listNode *head|listNode *tail|void *(*dup)(void *ptr)|void (*free)(void *ptr)|int (*match)(void *ptr,void *key)|unsigned long len"
+		fillcolor = "yellow:blue"
+		];
+
+	"listNode"[
+		label = "struct listNode|struct listNode *prev|struct listNode *next| void *value"
+		];
+
+	"listIter"[
+		label = "struct listIter|listNode *next|int direction"
+		];
+}

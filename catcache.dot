@@ -1,0 +1,44 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		color = "yellow"
+		gradientangle=90
+		];
+	edge[
+		];
+
+	"catcache"[
+		label = "struct catcache
+		|int id;	/* cache identifier --- see syscache.h */
+		|struct catcache *cc_next; /* link to next catcache */
+		|const char *cc_relname; /* name of relation the tuples come from */
+		|Oid	cc_reloid;	/* OID of relation the tuples come from */
+		|Oid	cc_indexoid;	/* OID of index matching cache keys */
+		|bool	cc_relisshared; /* is relation shared across databases? */
+		|TupleDesc cc_tupdesc;	/* tuple descriptor (copied from reldesc) */
+		|int	cc_reloidattr;	/* AttrNumber of relation OID attr, or 0 */
+		|int	cc_ntup;   /* # of tuples currently in this cache */
+		|int	cc_nbuckets;	/* # of hash buckets in this cache */
+		|int	cc_nkeys;	/* # of keys (1..4) */
+		|int	cc_key[4];	/* AttrNumber of each key */
+		|PGFunction cc_hashfunc[4]; /* hash function to use for each key */
+		|ScanKeyData cc_skey[4]; /* precomputed key info for heap scans */
+		|bool	cc_isname[4];	/* flag key columns that are NAMEs */
+		|Dllist	cc_lists;	/* list of CatCList structs */
+		|Dllist	cc_bucket[1];	/* hash buckets */
+		"
+			];
+
+
+
+}
+

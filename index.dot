@@ -1,0 +1,69 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white:lightyellow"
+		style="filled"
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		];
+	edge[
+		];
+
+	"head" [
+		label = "<f0>存储管理中的哈希"
+		fillcolor = "purple"
+		];
+	"hard" [
+		label = "<f0>外存管理"
+		fillcolor = "lightgreen"
+		];
+
+	"smgr" [
+			label = "<f0>Smgr relation"
+		fillcolor = "lightgreen"
+		];
+
+	"pending" [
+			label = "<f0>Pending operation"
+		fillcolor = "lightgreen"
+		];
+
+	"memory" [
+			label = "<f0>内存管理"
+			fillcolor = "lightblue"
+		];
+		
+	"local" [
+			label = "<f0>local buffer"
+			fillcolor = "lightblue"
+		];
+
+	"bp" [
+			label = "<f0> buffer pool"
+			fillcolor = "lightblue"
+		];
+	"sys" [
+			label = "<f0>syscache"
+			fillcolor = "lightblue"
+		];
+
+	"relcache" [
+			label = "<f0>relcache"
+			fillcolor = "lightblue"
+		];
+
+	"head":f0 -> "hard":f0;
+	"head":f0->"memory":f0;
+	"hard":f0 -> "smgr":f0;
+	"hard":f0 -> "pending":f0;
+	"memory":f0 -> "local":f0;
+	"memory":f0 -> "bp":f0;
+	"memory":f0 -> "sys":f0;
+	"memory":f0 -> "relcache":f0;
+
+
+}

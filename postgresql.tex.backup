@@ -1,0 +1,271 @@
+
+
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{CJK}
+\usepackage{verbatim}
+\usepackage{graphicx}
+
+
+
+
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+\title{Postgresql Hash} 
+\author{马文韬} 
+\date{\today} 
+
+\frame{\titlepage} 
+
+%\frame{\frametitle{Table of contents}\tableofcontents} 
+
+\section{Hash table} 
+\begin{frame}[fragile]
+\frametitle{Hash table基本结构及函数}
+hash\_create :创建一个动态哈希表（dynamic hash table）。\\
+hash\_search：查找，添加，移除entry。 \\
+hash\_search 4个动作：
+\begin{itemize}
+      \item HASH\_FIND：根据key查找哈希表
+      \item HASH\_ENTER:查找哈希表，如果entry没出现，那么创建一个
+      \item HASH\_ENTER\_NULL:同上，如果超出内存，返回NULL
+      \item HASH\_REMOVE:移除有特定key的entry
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Hash table基本结构及函数}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width = 110mm]{buffer.jpg}
+\caption{hash table 结构图}
+\label{overflow}
+\end{figure}
+\end{frame}
+
+\section{SysCache} 
+\begin{frame}[fragile]
+\frametitle{SysCache中的Hash}
+SysCache中的Hash
+1.结构体cachedesc中保存了catcache一部分字段信息，比如查找的键值数，被缓存的关系的OID。 \\
+2.结构体数组cacheinfo中保留了54个系统表的cachedesc信息。\\
+3.SysCache就是一个CatCache的结构体数组，长度就是cacheinfo的长度。在初始化的时候利用cacheinfo中的数据对SysCache中相应结构体初始化。\\
+
+\end{frame}
+
+\begin{frame}
+\frametitle{SysCache 中的Hash}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width = 110mm]{postgre.jpg}
+\caption{hash桶结构图}
+\label{overflow}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{内存管理中的Hash}
+catcache 中的cc\_bucket字段是一组哈希桶，每个桶是一个Dllist双端链表，缓存着系统表元组。\\
+
+InitPostgres > InitCatalogCache -->  InitCatCache 来初始化Catcache，分配空间时根据Hash桶的个数分配。\\
+
+在搜索时候，先利用搜索键值等计算出哈希值，再根据哈希值和桶的个数等信息计算出哈希索引,在相应的桶中遍历搜索相应值。\\
+
+
+\end{frame}
+
+
+\section{buffer pool} 
+\begin{frame}
+\frametitle{buffer pool 中的hash}
+初始化：buffer pool:InitPostgre --> InitBufferPool --> ShmemInitStruct --> hash\_search --> Hash\_search\_with\_hash\_value 创建哈希表。\\
+查询：根据BufferTag结构查询哈希表。
+\end{frame}
+
+\section{RelCache} 
+\begin{frame}
+\frametitle{RelCache 中的hash}
+RelCache使用一个哈希表来保存RelationData结构。\\
+初始化：InitPostgres 中进行初始化，创建Hash表，指定哈希函数等。\\
+其它:查找删除等操作都通过调用hash\_search函数完成，对hash表的操作基本同上。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{SDS}
+SDS的优点
+\begin{itemize}
+\item 增加追加操作的速度
+\item 计算字符串长度时间缩短
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{DICT}
+字典数据类型
+\begin{verbatim}
+typedef struct dictEntry {
+    void *key;
+    union {
+        void *val;
+        uint64_t u64;
+        int64_t s64;
+    } v;
+    struct dictEntry *next;
+} dictEntry;
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{DICT}
+\begin{verbatim}
+typedef struct dictht {
+    dictEntry **table;
+    unsigned long size;
+    unsigned long sizemask;  //长度掩码，用于计算索引
+    unsigned long used;
+} dictht;
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{DICT}
+\begin{verbatim}
+typedef struct dict {
+    dictType *type;
+    void *privdata;
+    dictht ht[2];
+    int rehashidx; /*not  rehashing  rehashidx == -1 */
+    int iterators; /* number of iterators  */
+} dict;
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{DICT}
+\begin{verbatim}
+typedef struct dictType {
+    unsigned int (*hashFunction)(const void *key);
+    void *(*keyDup)(void *privdata, const void *key);
+    void *(*valDup)(void *privdata, const void *obj);
+    int (*keyCompare)(void *privdata, const void *key1, const void *key2);
+    void (*keyDestructor)(void *privdata, void *key);
+    void (*valDestructor)(void *privdata, void *obj);
+} dictType;
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+\frametitle{DICT}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{dict.png}
+\caption{Dict 结构图}
+\label{overflow}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+ END
+\end{center}
+\end{frame}
+
+% \begin{frame}
+% \end{frame}
+% 
+% \begin{frame}
+% \end{frame}
+% 
+% \begin{frame}
+% \end{frame}
+% 
+% \section{DICT} 
+% 
+% \begin{frame}[fragile]
+% \begin{itemize}
+% \item Introduction to  \LaTeX  
+% \item Course 2 
+% \item Termpapers and presentations with \LaTeX 
+% \item Beamer class
+% \end{itemize} 
+% \end{frame}
+% 
+% \frame{\frametitle{lists with pause}
+% \begin{itemize}
+% \item Introduction to  \LaTeX \pause 
+% \item Course 2 \pause 
+% \item Termpapers and presentations with \LaTeX \pause 
+% \item Beamer class
+% \end{itemize} 
+% }
+% 
+% \subsection{Lists II}
+% \frame{\frametitle{numbered lists}
+% \begin{enumerate}
+% \item Introduction to  \LaTeX  
+% \item Course 2 
+% \item Termpapers and presentations with \LaTeX 
+% \item Beamer class
+% \end{enumerate}
+% }
+% \frame{\frametitle{numbered lists with pause}
+% \begin{enumerate}
+% \item Introduction to  \LaTeX \pause 
+% \item Course 2 \pause 
+% \item Termpapers and presentations with \LaTeX \pause 
+% \item Beamer class
+% \end{enumerate}
+% }
+% 
+% \section{Section no.3} 
+% \subsection{Tables}
+% \frame{\frametitle{Tables}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% \textbf{Date} & \textbf{Instructor} & \textbf{Title} \\
+% \hline
+% WS 04/05 & Sascha Frank & First steps with  \LaTeX  \\
+% \hline
+% SS 05 & Sascha Frank & \LaTeX \ Course serial \\
+% \hline
+% \end{tabular}}
+% 
+% 
+% \frame{\frametitle{Tables with pause}
+% \begin{tabular}{c c c}
+% A & B & C \\ 
+% \pause 
+% 1 & 2 & 3 \\  
+% \pause 
+% A & B & C \\ 
+% \end{tabular} }
+% 
+% 
+% \section{Section no. 4}
+% \subsection{blocs}
+% \frame{\frametitle{blocs}
+% 
+% \begin{block}{title of the bloc}
+% bloc text
+% \end{block}
+% 
+% \begin{exampleblock}{title of the bloc}
+% bloc text
+% \end{exampleblock}
+% 
+% 
+% \begin{alertblock}{title of the bloc}
+% bloc text
+% \end{alertblock}
+% }
+\end{CJK*}
+\end{document}
+

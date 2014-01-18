@@ -1,0 +1,50 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white:lightyellow"
+		style="filled"
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		];
+	edge[
+		];
+
+	"hash" [
+		label = "<f0>RelationIdCache"
+		fillcolor = "lightblue"
+		];
+
+	"segment" [
+			label = "<f0>HASHSEGMENT"
+			fillcolor = "white"
+		];
+
+	"bucket" [
+			label = "<f0>HASHBUCKET"
+			fillcolor = "white"
+		];
+
+	"element" [
+			label = "<f0>HASHELEMENT
+			|<f1>*link
+			|<f2>hashvalue
+			|RelationData"
+			fillcolor = "lightyellow"
+		];
+
+	"1element" [
+			label = "<f0>HASHELEMENT
+			|<f1>*link
+			|<f2>hashvalue
+			|RelationData"
+			fillcolor = "lightyellow"
+		];
+	"hash":f0 -> "segment":f0;
+	"segment":f0 -> "bucket":f0;
+	"bucket":f0 -> "element":f0;
+	"element":f1 -> "1element":f0;
+}

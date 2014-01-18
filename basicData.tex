@@ -1,0 +1,227 @@
+
+
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{CJK}
+\usepackage{verbatim}
+\usepackage{graphicx}
+
+
+
+
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+\title{redis数据类型} 
+\author{马文韬} 
+\date{\today} 
+
+\frame{\titlepage} 
+
+%\frame{\frametitle{Table of contents}\tableofcontents} 
+
+
+\section{SDS} 
+\begin{frame}[fragile]
+\frametitle{SDS}
+SDS数据类型表示
+\begin{verbatim}
+	typedef char *sds;
+	struct sdshdr{
+		int len（buf总长度）;
+		int free（未使用空间大小）;
+		char buf[];
+	}
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{SDS}
+SDS类型的作用: 实现字符串对象（StringObject）
+\end{frame}
+
+\begin{frame}
+\frametitle{SDS}
+SDS的扩容
+\begin{itemize}
+\item  如果所需空间小于1M，则分配所需空间的2倍大小。所需空间就是将字符串放入buf之后的大小。
+\item  如果所需空间大于1M，额外分配1M空间大小。
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{SDS}
+SDS的优点
+\begin{itemize}
+\item 增加追加操作的速度
+\item 计算字符串长度时间缩短
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{DICT}
+字典数据类型
+\begin{verbatim}
+typedef struct dictEntry {
+    void *key;
+    union {
+        void *val;
+        uint64_t u64;
+        int64_t s64;
+    } v;
+    struct dictEntry *next;
+} dictEntry;
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{DICT}
+\begin{verbatim}
+typedef struct dictht {
+    dictEntry **table;
+    unsigned long size;
+    unsigned long sizemask;  //长度掩码，用于计算索引
+    unsigned long used;
+} dictht;
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{DICT}
+\begin{verbatim}
+typedef struct dict {
+    dictType *type;
+    void *privdata;
+    dictht ht[2];
+    int rehashidx; /*not  rehashing  rehashidx == -1 */
+    int iterators; /* number of iterators  */
+} dict;
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{DICT}
+\begin{verbatim}
+typedef struct dictType {
+    unsigned int (*hashFunction)(const void *key);
+    void *(*keyDup)(void *privdata, const void *key);
+    void *(*valDup)(void *privdata, const void *obj);
+    int (*keyCompare)(void *privdata, const void *key1, const void *key2);
+    void (*keyDestructor)(void *privdata, void *key);
+    void (*valDestructor)(void *privdata, void *obj);
+} dictType;
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+\frametitle{DICT}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{dict.png}
+\caption{Dict 结构图}
+\label{overflow}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+ END
+\end{center}
+\end{frame}
+
+% \begin{frame}
+% \end{frame}
+% 
+% \begin{frame}
+% \end{frame}
+% 
+% \begin{frame}
+% \end{frame}
+% 
+% \section{DICT} 
+% 
+% \begin{frame}[fragile]
+% \begin{itemize}
+% \item Introduction to  \LaTeX  
+% \item Course 2 
+% \item Termpapers and presentations with \LaTeX 
+% \item Beamer class
+% \end{itemize} 
+% \end{frame}
+% 
+% \frame{\frametitle{lists with pause}
+% \begin{itemize}
+% \item Introduction to  \LaTeX \pause 
+% \item Course 2 \pause 
+% \item Termpapers and presentations with \LaTeX \pause 
+% \item Beamer class
+% \end{itemize} 
+% }
+% 
+% \subsection{Lists II}
+% \frame{\frametitle{numbered lists}
+% \begin{enumerate}
+% \item Introduction to  \LaTeX  
+% \item Course 2 
+% \item Termpapers and presentations with \LaTeX 
+% \item Beamer class
+% \end{enumerate}
+% }
+% \frame{\frametitle{numbered lists with pause}
+% \begin{enumerate}
+% \item Introduction to  \LaTeX \pause 
+% \item Course 2 \pause 
+% \item Termpapers and presentations with \LaTeX \pause 
+% \item Beamer class
+% \end{enumerate}
+% }
+% 
+% \section{Section no.3} 
+% \subsection{Tables}
+% \frame{\frametitle{Tables}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% \textbf{Date} & \textbf{Instructor} & \textbf{Title} \\
+% \hline
+% WS 04/05 & Sascha Frank & First steps with  \LaTeX  \\
+% \hline
+% SS 05 & Sascha Frank & \LaTeX \ Course serial \\
+% \hline
+% \end{tabular}}
+% 
+% 
+% \frame{\frametitle{Tables with pause}
+% \begin{tabular}{c c c}
+% A & B & C \\ 
+% \pause 
+% 1 & 2 & 3 \\  
+% \pause 
+% A & B & C \\ 
+% \end{tabular} }
+% 
+% 
+% \section{Section no. 4}
+% \subsection{blocs}
+% \frame{\frametitle{blocs}
+% 
+% \begin{block}{title of the bloc}
+% bloc text
+% \end{block}
+% 
+% \begin{exampleblock}{title of the bloc}
+% bloc text
+% \end{exampleblock}
+% 
+% 
+% \begin{alertblock}{title of the bloc}
+% bloc text
+% \end{alertblock}
+% }
+\end{CJK*}
+\end{document}
+

@@ -1,0 +1,25 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white:lightblue"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		gradientangle=90
+		];
+	edge[
+		];
+
+	"sdshdr"[
+		label = "<f0>struct sdshdr|int len|int free|char buf[]"
+		fillcolor = "yellow:blue"
+		];
+
+
+
+}

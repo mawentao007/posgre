@@ -1,0 +1,187 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		gradientangle=90
+		];
+	edge[
+		];
+
+	"SysCache"[
+		label = "<f0>CatCache *SysCache[lengthof(cacheinfo)]|<f1>SysCache[0]|<f2>SysCache[1]|...|<f3>SysCache[53]"
+		fillcolor = "red"
+		]
+
+	"catcache"[
+		label = "<f0>struct CatCache|<f1>id
+		|<f3>struct catcache *cc_next
+		|......|{<f2>Dllist cc_bucket[0]|Dllist cc_bucket[1]|...|<fn>Dllist cc_bucket[n]}"
+		fillcolor = "yellow"
+		];
+
+	"Dllist"[
+		label = "<f0>struct Dllist|<f1>Dlelem *dll_head|<f2>Dlelem *dll_tail"
+		fillcolor = "lightgreen"
+		]
+
+	"Dlelem"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+/*	"Dlelem1"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+*/
+		
+	"Dlelem2"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+
+/*	"Dlelem3"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+*/
+	"catcache":f2->"Dllist":f0;
+	"Dllist":f1->"Dlelem":f0;
+	"Dlelem":f1->"Dlelem2":f1;
+//	"Dlelem2":f1->"Dlelem3":f1;
+//	"Dlelem3":f2->"Dlelem2":f2;
+	"Dlelem2":f2->"Dlelem":f2;
+	"Dllist":f2->"Dlelem2":f0;
+	
+	"Dllist1"[
+		label = "<f0>struct Dllist|<f1>Dlelem *dll_head|<f2>Dlelem *dll_tail"
+		fillcolor = "lightgreen"
+		]
+
+	"Dlelem4"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+//	"Dlelem5"[
+//		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+//		fillcolor = "lightblue"
+//		]
+
+		
+	"Dlelem6"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+
+/*	"Dlelem7"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+*/	
+	"catcache":fn->"Dllist1":f0;
+	"Dllist1":f1->"Dlelem4":f0;
+	"Dlelem4":f1->"Dlelem6":f1;
+//	"Dlelem6":f1->"Dlelem7":f1;
+//	"Dlelem7":f2->"Dlelem6":f2;
+	"Dlelem6":f2->"Dlelem4":f2;
+	"Dllist1":f2->"Dlelem6":f0;
+	
+	"1catcache"[
+		label = "<f0>struct CatCache|<f1>id
+		|<f3>struct catcache *cc_next
+		|......|{<f2>Dllist cc_bucket[0]|Dllist cc_bucket[1]|...|<fn>Dllist cc_bucket[n]}"
+		fillcolor = "yellow"
+		];
+/*
+	"1Dllist"[
+		label = "<f0>struct Dllist|<f1>Dlelem *dll_head|<f2>Dlelem *dll_tail"
+		fillcolor = "lightgreen"
+		]
+
+	"1Dlelem"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+	"1Dlelem1"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+
+		
+	"1Dlelem2"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+
+	"1Dlelem3"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+
+	"1catcache":f2->"1Dllist":f0;
+	"1Dllist":f1->"1Dlelem":f0;
+	"1Dlelem":f1->"1Dlelem1":f1;
+	"1Dlelem1":f1->"1Dlelem2":f1;
+	"1Dlelem2":f1->"1Dlelem3":f1;
+	"1Dlelem3":f2->"1Dlelem2":f2;
+	"1Dlelem2":f2->"1Dlelem1":f2;
+	"1Dlelem1":f2->"1Dlelem":f2;
+	"1Dllist":f2->"1Dlelem3":f0;
+	
+	"1Dllist1"[
+		label = "<f0>struct Dllist|<f1>Dlelem *dll_head|<f2>Dlelem *dll_tail"
+		fillcolor = "lightgreen"
+		]
+
+	"1Dlelem4"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+	"1Dlelem5"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+
+		
+	"1Dlelem6"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+
+	"1Dlelem7"[
+		label = "<f0>struct Dlelem|<f1>Dlelem *dle_next|<f2>Dlelem *dle_prev|<f3>void  *dle_val|<f4>Dllist *dle_list"
+		fillcolor = "lightblue"
+		]
+	
+	"1catcache":fn->"1Dllist1":f0;
+	"1Dllist1":f1->"1Dlelem4":f0;
+	"1Dlelem4":f1->"1Dlelem5":f1;
+	"1Dlelem5":f1->"1Dlelem6":f1;
+	"1Dlelem6":f1->"1Dlelem7":f1;
+	"1Dlelem6":f2->"1Dlelem5":f2;
+	"1Dlelem5":f2->"1Dlelem4":f2;
+	"1Dllist1":f2->"1Dlelem7":f0;
+
+*/
+	"SysCache":f3->"catcache":f0;
+	"SysCache":f1->"1catcache":f0;
+
+	"catcacheheader"[
+		label = "<f0>struct CatCacheHeader
+		|CatCache *ch_caches  (链表头部)
+		|int ch_ntup (所有CatCache中缓存元组总数)"
+		fillcolor = "pink"
+		];
+
+	"catcacheheader":f0 -> "catcache":f0;
+	"catcache":f3 -> "1catcache":f0;
+
+}
+

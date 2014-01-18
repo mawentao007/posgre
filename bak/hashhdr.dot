@@ -1,0 +1,41 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		gradientangle=90
+		];
+	edge[
+		];
+
+
+	"HASHHDR"[
+		label = "<f0>struct HASHHDR 
+		|slock_t mutex锁，在操作nentries和freelist时获取
+		|long nentries 哈希表entries数量
+		|HASHELEMENT *freeList  释放元素的链表
+		|long dsize 目录大小
+		|long nsegs 被分配的段数量
+		|uint32 max_bucket 被使用的最大的桶号
+		|uint32 high_mask 掩码，modulo into entire table|uint32  low_mask 掩码，module into lower half of table
+		| Size keysize 键值长度
+		|Size entrysize 所有用户element大小
+		|long num_partitions （shared buffer mapping hashtable 16）
+		| long ffactor填充因子
+		|long max_dsize 目录大小极值
+		|long ssize 段大小，保存bucket个数
+		|int sshift
+		|int nelem_alloc 一次分配的entries数量"
+		fillcolor = "lightblue"
+		];
+
+
+}
+

@@ -1,0 +1,13 @@
+digrahp g{
+	node[
+		shape = "record"
+		];
+	"hptr"[
+		label = "
+		{
+		HashValueFunc hash 
+		| 如果HASHCTL没有提供，默认string_hash
+		}
+		|
+			"
+	]

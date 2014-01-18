@@ -1,0 +1,99 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white:lightblue"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		gradientangle=90
+		];
+	edge[
+		];
+
+	"aeEventLoop"[
+		label = "<f0>struct aeEventLoop|<f1>int maxfd|<f2>int setsize|<f3>long long timeEventNextId|<f4>time_t lastTime|<f5>aeFileEvent *events|<f6>aeFiredEvent *fired|<f7>aeTimeEvent *timeEventHead|<f8>int stop|<f9>void *apidata|<f10>aeBeforeSleepProc *beforesleep"
+		fillcolor = "yellow:blue"
+		];
+
+	"aeFiredEvent"[
+		label = "<f0>struct aeFiredEvent|<f1>int fd|<f2>int mas"
+		fillcolor = "green"
+		]
+
+	"aeTimeEvent"[
+		label = "<f0>struct aeTimeEvent|<f1>long when_sec|<f2>long when_ms|<f3>aeTimeProc *timeProc|<f4>aeEventFinalizerProc *finalizerProc|<f5>clientData|<f6>aeTimeEvent *next|<f7>long long id"
+		fillcolor = "red"
+		]
+
+	"aeFileEvent"[
+		label = "<f0>struct aeFileEvent|<f1>int mask|<f2>aeFileProc *rfileProc|<f3>aeFileProc *wfileProc|<f4>void *clientData"
+		fillcolor = "pink"
+		]
+
+	"aeEventLoop":f5->"aeFileEvent":f0
+	"aeEventLoop":f6->"aeFiredEvent":f0
+	"aeEventLoop":f7->"aeTimeEvent":f0
+
+
+//	"node4"[
+//		label = "<f0>|<f1>|<f2>|<f3>|<f4>|<f5>|<f6>|<f7>|<f8>|<f9>|<f10>|<f11>"
+//		]
+
+//	"node1"[
+//		label = "<f0>|<f1>|<f2>|<f3>|<f4>|<f5>|<f6>|<f7>|<f8>|<f9>|<f10>|<f11>"
+//		]
+//}
+
+//digraph f{
+//	graph[
+//		rankdir = "LR"
+//		bgcolor = "white:lightblue"
+//		style="filled"
+//		gradientangle = 270
+//		];
+
+//	node[
+//		fontsize = "16"
+//		shape = "record"
+//		style = "filled"
+//		gradientangle=90
+//		];
+//	edge[
+//		];
+
+//	"robj"[
+//		label = "<f0>robj|<f1>unsigned type:4|<f2>unsigned notused:2|<f4>unsigned encoding:4|<f5>unsigned lru:22|<f6>int refcount|<f7>void *ptr"
+//		]
+
+//	"redisDb"[
+//		label = "<f0>redisDb|<f1>dict *dict|<f2>dict *expires|<f3>dict *blocking_keys|<f4>dict *ready_keys|<f5>dict *watched_keys|<f6>int id"
+//		]
+
+	"epoll_event"[
+		label = "<f0>struct epoll_event|<f1>uint32_t events|<f2>struct epoll_data_t data"
+		fillcolor = "red"
+		]
+
+	"epoll_data"[
+		label = "<f0>struct epoll_data_t|<f1>void *ptr|<f2>int fd|<f3>unint32_t u32|<f4>uint64_t u64"
+		fillcolor = "yellow"
+		]
+
+	"aeApiState"[
+		label = "<f0>struct aeApiState|<f1>int epfd|<f2>struct epoll_event *events"
+		fillcolor = "green"
+		]
+
+//	"fd_set"[
+//		label = "<f0>struct fd_set|<f1>|<f2>|<f3>|<f4>|<f5>|<f6>|<f7>|<f8>|<f9>|<f10>|<f11>"
+//		]
+	
+	"aeApiState":f2 -> "epoll_event":f0
+    "epoll_event":f2 -> "epoll_data":f0
+    "aeEventLoop":f9 -> "aeApiState":f0
+}

@@ -1,0 +1,56 @@
+digraph g{
+	graph[
+		rankdir = "LR"
+		bgcolor = "white:lightblue"
+		style="filled"
+		gradientangle = 270
+		];
+
+	node[
+		fontsize = "16"
+		shape = "record"
+		style = "filled"
+		fillcolor = "yellow"
+		gradientangle=90
+		];
+	edge[
+		];
+
+	"dictEntry"[
+		label = "<f0>struct dictEntry|{void *key|union\{ void  *val ;uint64_t  u64;int64_t  s64\}v|struct dictEntry  *next}"
+		];
+
+	"dictht"[
+		label = "<f0>struct dictht|<f1>dictEntry  **table|unsigned long size|unsigned long  sizemask|unsigned long used"
+		];
+
+	"dict"[
+		label = "struct dict|<f0>dictType *type|void  *privdata|<f1>dictht ht[2]|int rehashidx|int iterators"
+		];
+
+	"dictType"[
+		label = "<f0>struct dictType|unsigned int (*hashFunction)(const void *key)|void *(*keyDup)(void *privdata,const void *key)| void *(*valDup)(void *privdata,const void *obj)| int (*keyCompare)(void *privdata,const void *key1,const void *key2)|void (*keyDestructor(void *privdata,void *key)|void (*valDestructor)(void *privdata,void *obj)"
+		];
+
+
+	"dictInterator"[
+		label = "struct dictInterator|dict *d|int table|int index|int safe|dictEntry *entry|dictEntry *nextEntry"
+		];
+
+	"dict":f0 -> "dictType":f0;
+	"dict":f1 -> "dictht":f0;
+	"dictht":f1 -> "dictEntry":f0;
+	
+
+
+
+
+
+
+
+	
+	
+
+
+
+}
