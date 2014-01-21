@@ -10,7 +10,7 @@ digraph g{
 		fontsize = "16"
 		shape = "record"
 		style = "filled"
-		color = "yellow"
+
 		gradientangle=90
 		];
 	edge[
@@ -35,7 +35,10 @@ digraph g{
 		|bool	cc_isname[4];	/* flag key columns that are NAMEs */
 		|Dllist	cc_lists;	/* list of CatCList structs */
 		|Dllist	cc_bucket[1];	/* hash buckets */
+
 		"
+
+		fillcolor = "lightblue"
 			];
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.8.20)  21 JAN 2014 17:57
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.8.20)  21 JAN 2014 20:12
 entering extended mode
  %&-line parsing enabled.
 **paper.tex
@@ -649,6 +649,9 @@ LaTeX Warning: Label `overflow' multiply defined.
 
 LaTeX Warning: Label `overflow' multiply defined.
 
+
+LaTeX Warning: Label `overflow' multiply defined.
+
 )
 \openout1 = `paper.aux'.
 
@@ -847,51 +850,142 @@ Overfull \hbox (19.50159pt too wide) in paragraph at lines 255--274
  [][] 
  []
 
-<syscache.jpg, id=102, 2015.53pt x 772.8875pt>
+[7 <./pending.jpg>] <syscache.jpg, id=106, 2015.53pt x 772.8875pt>
 File: syscache.jpg Graphic file (type jpg)
- <use syscache.jpg> [7 <./pending.jpg>] <rel.jpg, id=107, 1008.76875pt x 276.03
-125pt>
+
+<use syscache.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+<catcache.jpg, id=107, 582.175pt x 1081.03876pt>
+File: catcache.jpg Graphic file (type jpg)
+ <use catcache.jpg> [8 <./syscache.jpg>]
+Overfull \hbox (25.82307pt too wide) in paragraph at lines 330--331
+\C70/gkai/bx/n/10/63 ^^G \C70/gkai/bx/n/10/54 ^^Q \C70/gkai/bx/n/10/76 Ñ\T1/cmr
+/m/n/10 CatCList\C70/gkai/bx/n/10/94 ˛ \C70/gkai/m/n/10/88 h \C70/gkai/bx/n/10/
+4e - \C70/gkai/bx/n/10/67 Â \C70/gkai/m/n/10/62 ~\T1/cmr/m/n/10 ,HeapKeyTest\C7
+0/gkai/m/n/10/68 ¿ \C70/gkai/bx/n/10/67 Â\T1/cmr/m/n/10 key\C70/gkai/m/n/10/66 
+/ \C70/gkai/bx/n/10/54 & \C70/gkai/bx/n/10/53 9 \C70/gkai/bx/n/10/91 M\T1/cmr/m
+/n/10 ,\C70/gkai/m/n/10/5c ^^F \C70/gkai/bx/n/10/53 9 \C70/gkai/bx/n/10/91 M \C
+70/gkai/bx/n/10/76 Ñ\T1/cmr/m/n/10 CatClist\C70/gkai/bx/n/10/65 >
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
+
+ []
+
+[9 <./catcache.jpg>]
+Overfull \hbox (4.82939pt too wide) in paragraph at lines 341--342
+[]\T1/cmr/m/n/10 RelCache\C70/gkai/m/n/10/75 ( \C70/gkai/bx/n/10/4e é \C70/gkai
+/m/n/10/7f ^^S \C70/gkai/m/n/10/5b X \C70/gkai/bx/n/10/51 s \C70/gkai/bx/n/10/7
+c ˚ \C70/gkai/bx/n/10/51 C \C70/gkai/bx/n/10/7e ƒ \C70/gkai/bx/n/10/ff ^^L \C70
+/gkai/m/n/10/56 ‡ \C70/gkai/bx/n/10/4e : \C70/gkai/m/n/10/59 ' ^^Z \C70/gkai/bx
+/n/10/65 p\T1/cmr/m/n/10 RelationData\C70/gkai/m/n/10/66 / \C70/gkai/bx/n/10/4e
+ ^^M \C70/gkai/bx/n/10/53 ÿ \C70/gkai/bx/n/10/76 Ñ \C70/gkai/bx/n/10/ff ^^L \C7
+0/gkai/m/n/10/62 @ \C70/gkai/bx/n/10/4e Â\T1/cmr/m/n/10 pg\C70/gkai/bx/n/10/4e 
+≈
+ []
+
+<rel.jpg, id=115, 1008.76875pt x 276.03125pt>
 File: rel.jpg Graphic file (type jpg)
- <use rel.jpg> [8 <./syscache.jpg>]
-Overfull \hbox (91.3696pt too wide) in paragraph at lines 346--369
+ <use rel.jpg>
+Overfull \hbox (38.45763pt too wide) in paragraph at lines 354--355
+[]\C70/gkai/m/n/10/59 Ç \C70/gkai/m/n/10/56 ˛ \C70/gkai/m/n/10/62 @ \C70/gkai/m
+/n/10/79 : \C70/gkai/bx/n/10/ff ^^L \C70/gkai/bx/n/10/54 » \C70/gkai/bx/n/10/5e
+ ^^L \C70/gkai/m/n/10/88 h \C70/gkai/bx/n/10/76 Ñ \C70/gkai/bx/n/10/54 ^^M \C70
+/gkai/m/n/10/79  \C70/gkai/m/n/10/66 /\T1/cmr/m/n/10 RelationIdCache\C70/gkai/
+bx/n/10/ff ^^L\T1/cmr/m/n/10 entry\C70/gkai/bx/n/10/4e - \C70/gkai/m/n/10/5b X 
+\C70/gkai/m/n/10/50 ® \C70/gkai/bx/n/10/76 Ñ \C70/gkai/bx/n/10/65 p \C70/gkai/b
+x/n/10/63 n \C70/gkai/m/n/10/66 /\T1/cmr/m/n/10 RelationData\C70/gkai/bx/n/10/7
+e ”
+ []
+
+
+Overfull \hbox (91.3696pt too wide) in paragraph at lines 363--386
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
+[10 <./rel.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
 
  []
 
-<buf.jpg, id=111, 1001.7425pt x 334.24875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
+
+ []
+
+<buf.jpg, id=119, 1001.7425pt x 334.24875pt>
 File: buf.jpg Graphic file (type jpg)
- <use buf.jpg> [9 <./rel.jpg>]
-Overfull \hbox (55.05914pt too wide) in paragraph at lines 419--442
+ <use buf.jpg> [11]
+Overfull \hbox (56.06905pt too wide) in paragraph at lines 430--453
  [][] 
  []
 
-<local.jpg, id=115, 990.70125pt x 334.24875pt>
+
+Overfull \hbox (81.80328pt too wide) in paragraph at lines 458--459
+[]\C70/gkai/bx/n/10/67 , \C70/gkai/m/n/10/7a ‡ \C70/gkai/bx/n/10/4e ; \C70/gkai
+/bx/n/10/89 Å \C70/gkai/m/n/10/60 ; \C70/gkai/bx/n/10/7e ” \C70/gkai/bx/n/10/4e
+ Ü\T1/cmr/m/n/10 hash\C70/gkai/bx/n/10/57 (\T1/cmr/m/n/10 buffer pool\C70/gkai/
+bx/n/10/76 Ñ \C70/gkai/bx/n/10/5e î \C70/gkai/m/n/10/75 ( \C70/gkai/bx/n/10/ff 
+^^L \C70/gkai/bx/n/10/76 ¯ \C70/gkai/bx/n/10/51 s \C70/gkai/bx/n/10/4e „ \C70/g
+kai/bx/n/10/78 ^^A \C70/gkai/bx/n/10/57 (\T1/cmr/m/n/10 backend/storage/buffer/
+buf_tab.c\C70/gkai/bx/n/10/4e - \C70/gkai/m/n/10/30 ^^B 
+ []
+
+[12 <./buf.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
+
+ []
+
+<local.jpg, id=126, 990.70125pt x 334.24875pt>
 File: local.jpg Graphic file (type jpg)
  <use local.jpg>
-Overfull \hbox (110.69333pt too wide) in paragraph at lines 461--489
+Overfull \hbox (45.52948pt too wide) in paragraph at lines 483--484
+[]\C70/gkai/m/n/10/75 1 \C70/gkai/bx/n/10/4e 
+ \C70/gkai/m/n/10/56 ˛ \C70/gkai/bx/n/10/53 Ô \C70/gkai/m/n/10/77 Â \C70/gkai/b
+x/n/10/ff ^^L\T1/cmr/m/n/10 local buffer\C70/gkai/bx/n/10/76 Ñ \C70/gkai/bx/n/1
+0/54 » \C70/gkai/bx/n/10/5e ^^L \C70/gkai/m/n/10/88 h \C70/gkai/bx/n/10/54 ^^M 
+\C70/gkai/bx/n/10/4e :\T1/cmr/m/n/10 LocalBufHash\C70/gkai/bx/n/10/ff ^^L\T1/cm
+r/m/n/10 entry\C70/gkai/bx/n/10/4e - \C70/gkai/m/n/10/5b X \C70/gkai/m/n/10/50 
+®\T1/cmr/m/n/10 BufferTag\C70/gkai/bx/n/10/54 å\T1/cmr/m/n/10 buffer
+ []
+
+
+Overfull \hbox (21.46489pt too wide) in paragraph at lines 492--520
  [][] 
  []
 
-[10 <./buf.jpg> <./local.jpg>] [11] (./paper.aux)
+
+Overfull \hbox (2.60771pt too wide) in paragraph at lines 522--523
+[]\C70/gkai/m/n/10/75 1 \C70/gkai/m/n/10/88 h \C70/gkai/bx/n/10/53 Ô \C70/gkai/
+m/n/10/77 Â \C70/gkai/bx/n/10/ff ^^L\T1/cmr/m/n/10 BufferTag\C70/gkai/m/n/10/75
+ 1 \C70/gkai/m/n/10/8c ^^C \C70/gkai/m/n/10/75 ( \C70/gkai/bx/n/10/51 ˝ \C70/gk
+ai/bx/n/10/65 p \C70/gkai/bx/n/10/76 Ñ\T1/cmr/m/n/10 smgr\C70/gkai/m/n/10/7b I 
+\C70/gkai/bx/n/10/53 ¬ \C70/gkai/bx/n/10/65 p \C70/gkai/m/n/10/75 ^^_ \C70/gkai
+/m/n/10/62 ^^P \C70/gkai/bx/n/10/ff ^^L \C70/gkai/bx/n/10/5e v \C70/gkai/m/n/10
+/75 ( \C70/gkai/m/n/10/8f Ÿ \C70/gkai/bx/n/10/4e *\T1/cmr/m/n/10 BufferTag\C70/
+gkai/bx/n/10/4f \
+ []
+
+[13 <./local.jpg>] [14] (./paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6034 strings out of 493848
- 80443 string characters out of 1152823
- 161881 words of memory out of 3000000
- 9104 multiletter control sequences out of 15000+50000
- 59344 words of font info for 201 fonts, out of 3000000 for 9000
+ 6105 strings out of 493848
+ 81829 string characters out of 1152823
+ 161882 words of memory out of 3000000
+ 9172 multiletter control sequences out of 15000+50000
+ 62109 words of font info for 211 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  37i,14n,55p,528b,447s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-
@@ -919,39 +1013,41 @@ aiu6a.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu6b.pfb></usr/share/te
 xmf/fonts/type1/arphic/gkaiu/gkaiu6c.pfb></usr/share/texmf/fonts/type1/arphic/g
 kaiu/gkaiu6d.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu6e.pfb></usr/s
 hare/texmf/fonts/type1/arphic/gkaiu/gkaiu6f.pfb></usr/share/texmf/fonts/type1/a
-rphic/gkaiu/gkaiu71.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu72.pfb>
-</usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu73.pfb></usr/share/texmf/fonts/
-type1/arphic/gkaiu/gkaiu74.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu
-75.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu76.pfb></usr/share/texmf
-/fonts/type1/arphic/gkaiu/gkaiu77.pfb></usr/share/texmf/fonts/type1/arphic/gkai
-u/gkaiu78.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu79.pfb></usr/shar
-e/texmf/fonts/type1/arphic/gkaiu/gkaiu7a.pfb></usr/share/texmf/fonts/type1/arph
-ic/gkaiu/gkaiu7b.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu7c.pfb></u
-sr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu7d.pfb></usr/share/texmf/fonts/typ
-e1/arphic/gkaiu/gkaiu7e.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu7f.
-pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu80.pfb></usr/share/texmf/fo
-nts/type1/arphic/gkaiu/gkaiu81.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/g
-kaiu83.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu88.pfb></usr/share/t
-exmf/fonts/type1/arphic/gkaiu/gkaiu89.pfb></usr/share/texmf/fonts/type1/arphic/
-gkaiu/gkaiu8a.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu8b.pfb></usr/
-share/texmf/fonts/type1/arphic/gkaiu/gkaiu8c.pfb></usr/share/texmf/fonts/type1/
-arphic/gkaiu/gkaiu8d.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu8f.pfb
-></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu90.pfb></usr/share/texmf/fonts
-/type1/arphic/gkaiu/gkaiu91.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkai
-u94.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu95.pfb></usr/share/texm
-f/fonts/type1/arphic/gkaiu/gkaiu96.pfb></usr/share/texmf/fonts/type1/arphic/gka
-iu/gkaiu97.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu98.pfb></usr/sha
-re/texmf/fonts/type1/arphic/gkaiu/gkaiu99.pfb></usr/share/texmf/fonts/type1/arp
-hic/gkaiu/gkaiu9a.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu9e.pfb></
-usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiuff.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on paper.pdf (11 pages, 1234768 bytes).
+rphic/gkaiu/gkaiu70.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu71.pfb>
+</usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu72.pfb></usr/share/texmf/fonts/
+type1/arphic/gkaiu/gkaiu73.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu
+74.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu75.pfb></usr/share/texmf
+/fonts/type1/arphic/gkaiu/gkaiu76.pfb></usr/share/texmf/fonts/type1/arphic/gkai
+u/gkaiu77.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu78.pfb></usr/shar
+e/texmf/fonts/type1/arphic/gkaiu/gkaiu79.pfb></usr/share/texmf/fonts/type1/arph
+ic/gkaiu/gkaiu7a.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu7b.pfb></u
+sr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu7c.pfb></usr/share/texmf/fonts/typ
+e1/arphic/gkaiu/gkaiu7d.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu7e.
+pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu7f.pfb></usr/share/texmf/fo
+nts/type1/arphic/gkaiu/gkaiu80.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/g
+kaiu81.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu82.pfb></usr/share/t
+exmf/fonts/type1/arphic/gkaiu/gkaiu83.pfb></usr/share/texmf/fonts/type1/arphic/
+gkaiu/gkaiu88.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu89.pfb></usr/
+share/texmf/fonts/type1/arphic/gkaiu/gkaiu8a.pfb></usr/share/texmf/fonts/type1/
+arphic/gkaiu/gkaiu8b.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu8c.pfb
+></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu8d.pfb></usr/share/texmf/fonts
+/type1/arphic/gkaiu/gkaiu8f.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkai
+u90.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu91.pfb></usr/share/texm
+f/fonts/type1/arphic/gkaiu/gkaiu94.pfb></usr/share/texmf/fonts/type1/arphic/gka
+iu/gkaiu95.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu96.pfb></usr/sha
+re/texmf/fonts/type1/arphic/gkaiu/gkaiu97.pfb></usr/share/texmf/fonts/type1/arp
+hic/gkaiu/gkaiu98.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu99.pfb></
+usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiu9a.pfb></usr/share/texmf/fonts/ty
+pe1/arphic/gkaiu/gkaiu9e.pfb></usr/share/texmf/fonts/type1/arphic/gkaiu/gkaiuff
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfrm1728.pfb>
+Output written on paper.pdf (14 pages, 1415255 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
+ 375 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
